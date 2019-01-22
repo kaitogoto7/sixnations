@@ -109,7 +109,7 @@ extract.score.cells.from.webpage.special <- function(link){
   html.vector <- readLines(link)
   html.lines <- regmatches(html.vector, regexpr("<td>[[:digit:]]{1,3}</td>", html.vector))
   html.lines.trimmed <- substr(html.lines, 5, nchar(html.lines)-5)
-  matrix <- matrix(as.integer(html.lines.trimmed)[-c(15)], ncol = 4, byrow = TRUE) #HARD CODING
+  matrix <- matrix(as.integer(html.lines.trimmed)[-c(11)], ncol = 4, byrow = TRUE) #HARD CODING
   return(matrix)
 }
 
