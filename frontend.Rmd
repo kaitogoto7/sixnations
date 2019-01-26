@@ -233,17 +233,23 @@ layout <- list(
     pad = 4
   ), 
   showlegend = FALSE, 
+  title = list(text = "IMPROVEMENT AT HOME"), 
   width = 750, 
   xaxis = list(
-    #categoryarraysrc = "kaitogoto7:2:933abe", 
+    autorange = TRUE, 
+    categoryarraysrc = "kaitogoto7:6:a73fad", 
     categoryorder = "array", 
     domain = c(0, 1), 
-    title = "Metric", 
+    range = c(-0.5, 3.5), 
+    title = list(text = ""), 
     type = "category"
   ), 
   yaxis = list(
+    autorange = TRUE, 
     domain = c(0, 1), 
-    title = ""
+    range = c(-3.02222222222, 15.4222222222), 
+    title = list(text = ""), 
+    type = "linear"
   )
 )
 
@@ -266,6 +272,6 @@ p <- add_trace(p, x=trace6$x, y=trace6$y, hoverinfo=trace6$hoverinfo, marker=tra
 p <- layout(p, autosize=layout$autosize, barmode=layout$barmode, height=layout$height, hovermode=layout$hovermode, margin=layout$margin, showlegend=layout$showlegend, width=layout$width, xaxis=layout$xaxis, yaxis=layout$yaxis)
 
 Sys.setenv("plotly_username"="kaitogoto7")
-#Sys.setenv("plotly_api_key"="your_api_key")
+#Sys.setenv("plotly_api_key"="insert_api_key_here")
 api_create(p, filename = "Six Nations Home Advantages")
 ```
