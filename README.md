@@ -1,1 +1,1 @@
-source of webpages scraped: espnscrum statsguru
+webpages scraped are from espnscrum statsguru
