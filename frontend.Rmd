@@ -21,9 +21,9 @@ full.time.margin <- function(nation){
   filenames <- list.files("./6nationsHomeAdvantages")
   indexes <- grep(nation, filenames)
   away.df <- read.csv(paste0("./6nationsHomeAdvantages/", filenames[indexes[1]]))[,-c(1)] #away csv is read
-  away.margin <- sum(away.df[,1])/10 - sum(away.df[,2])/10
+  away.margin <- sum(away.df[,1])/length(away.df[,1]) - sum(away.df[,2])/length(away.df[,2])
   home.df <- read.csv(paste0("./6nationsHomeAdvantages/", filenames[indexes[2]]))[,-c(1)] #home csv is read
-  home.margin <- sum(home.df[,1])/10 - sum(home.df[,2])/10
+  home.margin <- sum(home.df[,1])/length(home.df[,1]) - sum(home.df[,2])/length(home.df[,2])
   return(home.margin - away.margin)
 }
 
@@ -43,9 +43,9 @@ half.time.margin <- function(nation){
   filenames <- list.files("./6nationsHomeAdvantages")
   indexes <- grep(nation, filenames)
   away.df <- read.csv(paste0("./6nationsHomeAdvantages/", filenames[indexes[1]]))[,-c(1)] #away csv is read
-  away.margin <- sum(away.df[,3])/10 - sum(away.df[,4])/10
+  away.margin <- sum(away.df[,3])/length(away.df[,3]) - sum(away.df[,4])/length(away.df[,4])
   home.df <- read.csv(paste0("./6nationsHomeAdvantages/", filenames[indexes[2]]))[,-c(1)] #home csv is read
-  home.margin <- sum(home.df[,3])/10 - sum(home.df[,4])/10
+  home.margin <- sum(home.df[,3])/length(home.df[,3]) - sum(home.df[,4])/length(home.df[,4])
   return(home.margin - away.margin)
 }
 
